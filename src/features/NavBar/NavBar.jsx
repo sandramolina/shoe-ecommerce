@@ -7,11 +7,15 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import './NavBar.css';
+import { ReactComponent as ShoppingBag } from '../../img/shoppingbag.svg';
+
 function NavBar() {
   return (
     <Navbar fixed='top' bg='dark' expand='lg' variant='dark'>
       <Container fluid>
         <Navbar.Brand href='#'>Golden Shoes</Navbar.Brand>
+
         <Navbar.Toggle aria-controls='navbarScroll' />
         <Navbar.Collapse id='navbarScroll'>
           <Nav
@@ -27,17 +31,20 @@ function NavBar() {
               <NavDropdown.Item href='#action4'>KIDS</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href='#action2'>TRENDS</Nav.Link>
+
+            <Form className='d-flex'>
+              <Form.Control
+                type='search'
+                placeholder='Search'
+                className='me-2'
+                aria-label='Search'
+              />
+              <Button variant='success'>Search</Button>
+            </Form>
           </Nav>
-          <Form className='d-flex'>
-            <Form.Control
-              type='search'
-              placeholder='Search'
-              className='me-2'
-              aria-label='Search'
-            />
-            <Button variant='success'>Search</Button>
-          </Form>
         </Navbar.Collapse>
+
+        <ShoppingBag className='bag' />
       </Container>
     </Navbar>
   );
