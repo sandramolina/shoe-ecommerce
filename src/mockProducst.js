@@ -36,23 +36,13 @@ const shoeList = [
       averageRate: 4.5,
       count: 1500,
     },
-    specifications: [
-      {
-        mainShoeMaterial: 'Leather',
-      },
-      {
-        Fastening: 'Lace-Up',
-      },
-      {
-        rubber: 'Sole: rubber',
-      },
-      {
-        ProductCode: '39115101',
-      },
-      {
-        brand: 'Timberland',
-      },
-    ],
+    specifications: {
+      mainShoeMaterial: 'Leather',
+      fastening: 'Lace-Up',
+      rubber: 'Sole: rubber',
+      productCode: '39115101',
+      brand: 'Timberland',
+    },
     colours: [
       {
         colourName: 'Tan',
