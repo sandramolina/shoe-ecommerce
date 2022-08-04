@@ -13,7 +13,7 @@ const HomeCarousel = () => {
           alt='banner men shoes'
         />
       </Carousel.Item>
-      <Carousel.Item interval={1000}>
+      {/* <Carousel.Item interval={1000}>
         <img
           className='d-block w-100'
           src='https://betelli.uk/data/include/img/links/1593074434_rwd_desktop.jpg'
@@ -26,7 +26,7 @@ const HomeCarousel = () => {
           src={banner_kids}
           alt='banner kids shoes'
         />
-      </Carousel.Item>
+      </Carousel.Item> */}
     </Carousel>
   );
 };
