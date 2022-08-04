@@ -1,7 +1,5 @@
 import React from 'react';
-
 import { Carousel } from 'react-bootstrap';
-
 import './HomeCarousel.css';
 import banner_kids from '../../img/banner_kids.png';
 
