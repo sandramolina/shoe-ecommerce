@@ -24,7 +24,7 @@ const HomeCarousel = () => {
         <img
           className='d-block w-100'
           src={banner_kids}
-          alt='Eyeshadows banner'
+          alt='banner kids shoes'
         />
       </Carousel.Item>
     </Carousel>
