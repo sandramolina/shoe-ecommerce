@@ -37,3 +37,11 @@
     transform: translateY(0px);
   }
 }
+
+.navbar-home {
+  margin-bottom: 20rem;
+}
+
+.home-carousel {
+  margin-top: 20rem;
+}

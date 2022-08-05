@@ -12,7 +12,7 @@ import { ReactComponent as ShoppingBag } from '../../img/shoppingbag.svg';
 
 function NavBar() {
   return (
-    <Navbar fixed='top' bg='dark' expand='lg' variant='dark'>
+    <Navbar bg='dark' expand='lg' variant='dark'>
       <Container fluid>
         <Navbar.Brand href='#'>Golden Shoe</Navbar.Brand>
 
