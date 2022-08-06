@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
+import { Carousel, Col, Container, Row } from 'react-bootstrap';
 
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -15,10 +15,19 @@ const DetailedProduct = () => {
     selectByProductId(state.productsState, Number(id))
   );
 
+  const imagesUrlList = product.images;
+  const carouselNodes = imagesUrlList.map((imgUrl) => (
+    <Carousel.Item>
+      <img className='d-block w-100' src={imgUrl} alt='Product' />
+    </Carousel.Item>
+  ));
+
   return (
     <Container id='detailed-product-container'>
       <Row id='top-section'>
-        <Col>Carousel - images</Col>
+        <Col>
+          <Carousel>{carouselNodes}</Carousel>
+        </Col>
         <Col>
           {product.brand}
           <h2>{product.title}</h2>
