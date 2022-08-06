@@ -28,6 +28,7 @@ const DetailedProduct = () => {
   const productStocks = product.productStocks;
   const colourList = productStocks.map((stockItem, i) => (
     <Button variant='success' key={i} className='colour-btn-dp'>
+      <img src={stockItem.colour.colourImage} alt='colour' width='20px' />
       {stockItem.colour.colourName}
     </Button>
   ));
@@ -44,7 +45,7 @@ const DetailedProduct = () => {
     <Container id='detailed-product-container'>
       <Row id='top-section'>
         <Col>
-          <Carousel>{carouselNodes}</Carousel>
+          <Carousel variant='dark'>{carouselNodes}</Carousel>
         </Col>
         <Col>
           {product.brand}
@@ -69,7 +70,37 @@ const DetailedProduct = () => {
         </Col>
       </Row>
       <Row id='bottom-section'>
-        <Col>{product.shortDescription}</Col>
+        <Col>
+          <h2>Product Description</h2>
+          {product.shortDescription}
+          <hr />
+          {product.longDescription}
+        </Col>
+        <Col id='prod-specifications'>
+          <h2>Product Specifications</h2>
+          <ul>
+            <li>
+              <span className='bold-txt'>Brand: </span>
+              {product.brand}
+            </li>
+            <li>
+              <span className='bold-txt'>Product Code: </span>
+              {product.productCode}
+            </li>
+            <li>
+              <span className='bold-txt'>Main Shoe Material: </span>
+              {product.mainShoeMaterial}
+            </li>
+            <li>
+              <span className='bold-txt'>Fastening: </span>
+              {product.fastening}
+            </li>
+            <li>
+              <span className='bold-txt'>Sole: </span>
+              {product.rubber}
+            </li>
+          </ul>
+        </Col>
       </Row>
     </Container>
   );
