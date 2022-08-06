@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 
+import './Product.css';
+
 const Product = ({ product }) => {
   return (
     <Card style={{ width: '10rem', height: '23rem' }}>
@@ -17,7 +19,9 @@ const Product = ({ product }) => {
           {product.price.currencyUnit.symbol} {product.price.amount}
         </Card.Text>
         <div className='card-bottom'>
-          <Button className='shop-text'>SHOP</Button>
+          <Button variant='success' className='shop-text'>
+            SHOP
+          </Button>
         </div>
       </Card.Body>
     </Card>

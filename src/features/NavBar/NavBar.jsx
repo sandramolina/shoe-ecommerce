@@ -36,7 +36,7 @@ function NavBar() {
               <NavDropdown.Item>WOMENS</NavDropdown.Item>
               <NavDropdown.Item>KIDS</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link href='#action2'>TRENDS</Nav.Link>
+            <Nav.Link>TRENDS</Nav.Link>
 
             <Form className='d-flex'>
               <Form.Control
