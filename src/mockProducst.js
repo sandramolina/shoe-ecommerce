@@ -2,59 +2,49 @@ const shoeList = [
   {
     id: 1,
     title: 'Foot Cushion',
-    price: {
-      currencyUnit: {
-        code: 'GBP',
-        numericCode: 826,
-        decimalPlaces: 2,
-        numeric3Code: '826',
-        countryCodes: ['GG', 'IM', 'GB', 'JE'],
-        pseudoCurrency: false,
-        symbol: '£',
-      },
-      amount: 13.87,
-      amountMajor: 13,
-      amountMajorLong: 13,
-      amountMajorInt: 13,
-      amountMinor: 1387,
-      amountMinorLong: 1387,
-      amountMinorInt: 1387,
-      minorPart: 87,
-      positiveOrZero: true,
-      negativeOrZero: false,
-      positive: true,
-      scale: 2,
-      zero: false,
-      negative: false,
-    },
-    productCategory: 'Mens',
-    images: ['url1', 'url2', 'url3'],
+    price: {},
+    productCategory: 'MENS',
+    images: ['thisimage.png'],
+    mainShoeMaterial: 'Leather',
+    fastening: 'Lace-Up',
+    rubber: 'Sole: rubber',
+    productCode: '39115101',
+    brand: 'Timberland',
     shortDescription: 'High quality foot cushion for all your cushiony needs',
     longDescription:
-      'These Timberland shoes are classic and contemporary at the same time. The Stormbuck style will not only make you look and feel good, but is also environmentally friendly. As well as using recycled rubber for the soles, the linings have been made from recycled plastic bottles, creating an eco-friendly product.',
+      'These Timberland shoes are classic and contemporary at the same time. As well as using recycled rubber for the soles, the linings have been made from recycled plastic bottles, creating an eco-friendly product.',
     rating: {
+      id: 1,
       averageRate: 4.5,
-      count: 1500,
+      count: 4500,
     },
-    specifications: {
-      mainShoeMaterial: 'Leather',
-      fastening: 'Lace-Up',
-      rubber: 'Sole: rubber',
-      productCode: '39115101',
-      brand: 'Timberland',
-    },
-    colours: [
+    productStocks: [
       {
-        colourName: 'Tan',
-        colourImage:
-          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-red.png',
+        product_stock_id: 1,
+        stock_count: 10,
+        size: {
+          size_id: 1,
+          size: 3,
+        },
+        colour: {
+          colourName: 'Passion Red',
+          colourImage:
+            'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-red.png',
+        },
       },
       {
-        colourName: 'Black',
-        colourImage:
-          'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-hot-pink.png',
+        product_stock_id: 2,
+        stock_count: 5,
+        size: {
+          size_id: 1,
+          size: 3,
+        },
+        colour: {
+          colourName: 'Emerald',
+          colourImage:
+            'https://raw.githubusercontent.com/sandramolina/assets/main/colors/color-emerald.png',
+        },
       },
     ],
-    isFavourite: false,
   },
 ];
