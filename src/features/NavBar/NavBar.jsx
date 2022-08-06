@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -14,7 +16,9 @@ function NavBar() {
   return (
     <Navbar bg='dark' expand='lg' variant='dark'>
       <Container fluid>
-        <Navbar.Brand href='#'>Golden Shoe</Navbar.Brand>
+        <Link to='/'>
+          <Navbar.Brand>Golden Shoe</Navbar.Brand>
+        </Link>
 
         <Navbar.Toggle aria-controls='navbarScroll' />
         <Navbar.Collapse id='navbarScroll'>
@@ -23,12 +27,14 @@ function NavBar() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href='#action1'>HOME</Nav.Link>
+            <Nav.Link>HOME</Nav.Link>
             <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
-              <NavDropdown.Item href='#action3'>ALL</NavDropdown.Item>
-              <NavDropdown.Item href='#action4'>MENS</NavDropdown.Item>
-              <NavDropdown.Item href='#action4'>WOMENS</NavDropdown.Item>
-              <NavDropdown.Item href='#action4'>KIDS</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to='/products'>
+                ALL
+              </NavDropdown.Item>
+              <NavDropdown.Item>MENS</NavDropdown.Item>
+              <NavDropdown.Item>WOMENS</NavDropdown.Item>
+              <NavDropdown.Item>KIDS</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link href='#action2'>TRENDS</Nav.Link>
 

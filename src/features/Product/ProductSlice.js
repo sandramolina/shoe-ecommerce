@@ -23,11 +23,6 @@ const initialState = {
 export const productsSlice = createSlice({
   name: 'productsState',
   initialState,
-  reducers: {
-    displayAll: (state) => {
-      state;
-    },
-  },
   extraReducers: {
     [getProductData.pending]: (state) => {
       state.loading = true;
