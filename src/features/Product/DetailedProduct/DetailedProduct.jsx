@@ -32,6 +32,14 @@ const DetailedProduct = () => {
     </Button>
   ));
 
+  //Size list
+  //TODO: How to eliminate the repeated? maybe it's better to display all sizes and just change disable the ones that are not found in the array
+  const sizeList = productStocks.map((stockItem, i) => (
+    <Button variant='success' key={i} className='colour-btn-dp'>
+      {stockItem.size.size}
+    </Button>
+  ));
+
   return (
     <Container id='detailed-product-container'>
       <Row id='top-section'>
@@ -52,6 +60,7 @@ const DetailedProduct = () => {
             </Form.Group>
             <Form.Group className='mb-3' controlId='formSize'>
               <Form.Label>Sizes</Form.Label>
+              {sizeList}
             </Form.Group>
             <Button variant='success' type='submit'>
               Add to Cart
