@@ -1,4 +1,8 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import {
+  createSlice,
+  createAsyncThunk,
+  createSelector,
+} from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getProductData = createAsyncThunk(
@@ -39,6 +43,14 @@ export const productsSlice = createSlice({
     },
   },
 });
+
+// Products Selectors
+export const selectAllProducts = (state) => state.products;
+export const selectByProductId = createSelector(
+  [selectAllProducts, (state, productId) => productId],
+  (productsList, productId) =>
+    productsList.find((product) => product.id === productId)
+);
 
 export const { displayAll } = productsSlice.actions;
 export default productsSlice.reducer;
