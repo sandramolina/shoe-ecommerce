@@ -11,7 +11,7 @@ export const cartItemsSlice = createSlice({
         (cartItem) => cartItem.product.id === action.payload.product.id
       );
       if (foundCartItemIndex !== -1) {
-        items[foundCartItemIndex].count += action.payload.count;
+        items[foundCartItemIndex].count += 1;
       } else {
         items.push(action.payload);
       }

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Carousel, Col, Container, Row, Form } from 'react-bootstrap';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { selectByProductId } from '../ProductSlice';
+import { addItemToCart } from '../../Cart/CartItemSlice';
 
 import './DetailedProduct.css';
 
@@ -12,6 +13,8 @@ const DetailedProduct = () => {
   const [sizes, setSizes] = useState([]);
   const [colourState, setColourState] = useState('');
   const [sizeState, setSizeState] = useState('');
+
+  const dispatch = useDispatch();
 
   const { id } = useParams();
 
@@ -61,7 +64,12 @@ const DetailedProduct = () => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     const stockId = getItemId(colourState, sizeState);
-    console.log(stockId);
+    const itemCartObject = {
+      product,
+      stockId,
+      count: 1,
+    };
+    dispatch(addItemToCart(itemCartObject));
   };
 
   const getItemId = (colourState, sizeState) => {
