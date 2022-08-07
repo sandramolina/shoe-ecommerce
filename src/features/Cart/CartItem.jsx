@@ -12,7 +12,7 @@ const CartItem = ({ productInCart }) => {
       <Card.Body>
         <Card.Img
           alt={`beautiful representation for the product ${productInCart.product.title}`}
-          className='.img-fluid. max-width: 50%'
+          className='.img-fluid. max-width: 10%'
           src={productInCart.product.images[0]}
         />
         <Card.Title>{productInCart.product.title}</Card.Title>
