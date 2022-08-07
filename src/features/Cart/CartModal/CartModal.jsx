@@ -4,7 +4,7 @@ import { Offcanvas } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { closeCart } from './CartModalSlice';
-import Cart from './Cart';
+import Cart from '../Cart';
 
 const CartModal = () => {
   const show = useSelector((state) => state.cartIsOpen.value);
