@@ -8,7 +8,9 @@ export const cartItemsSlice = createSlice({
   reducers: {
     addItemToCart: ({ items }, action) => {
       const foundCartItemIndex = items.findIndex(
-        (cartItem) => cartItem.product.id === action.payload.product.id
+        (cartItem) =>
+          (cartItem.product.id === action.payload.product.id) &
+          (cartItem.stockId === action.payload.stockId)
       );
       if (foundCartItemIndex !== -1) {
         items[foundCartItemIndex].count += 1;

@@ -102,6 +102,7 @@ const DetailedProduct = () => {
               <Form.Select
                 aria-label='Select color'
                 onChange={handleColourSelection}
+                required
               >
                 <option>Select color</option>
                 {colourNodesDropdown}
@@ -111,6 +112,7 @@ const DetailedProduct = () => {
               <Form.Select
                 aria-label='Select size'
                 onChange={handleSizeSelection}
+                required
               >
                 <option>Select size</option>
                 {sizesNodesDropdown}
