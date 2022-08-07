@@ -3,6 +3,17 @@
   color: green;
 }
 
+input[type='radio'] {
+  visibility: hidden;
+}
+
+input[type='radio']:checked + label {
+  border: solid 1px green;
+  border-radius: 78%;
+  background: #0080007a;
+  padding: 1%;
+}
+
 .colour-img {
   padding: 1%;
   width: 10%;

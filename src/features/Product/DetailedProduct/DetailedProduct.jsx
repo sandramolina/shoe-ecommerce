@@ -1,5 +1,13 @@
 import React from 'react';
-import { Button, Carousel, Col, Container, Row, Form } from 'react-bootstrap';
+import {
+  Button,
+  Carousel,
+  Col,
+  Container,
+  Row,
+  Form,
+  Dropdown,
+} from 'react-bootstrap';
 
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -26,19 +34,39 @@ const DetailedProduct = () => {
 
   //Colours list
   const productStocks = product.productStocks;
-  const colourList = productStocks.map((stockItem, i) => (
-    <Button variant='success' key={i} className='colour-btn-dp'>
-      <img src={stockItem.colour.colourImage} alt='colour' width='20px' />
-      {stockItem.colour.colourName}
-    </Button>
+  // const colourList = productStocks.map((stockItem, i) => (
+  //   <Button variant='success' key={i} className='colour-btn-dp'>
+  //     <img src={stockItem.colour.colourImage} alt='colour' width='20px' />
+  //     {stockItem.colour.colourName}
+  //   </Button>
+  // ));
+
+  const colourNodesDropdown = productStocks.map((stockItem) => (
+    <Dropdown.Item className='colour-dd'>
+      <img
+        className='colour-img'
+        src={stockItem.colour.colourImage}
+        alt={stockItem.colour.colourName}
+      />
+      <p>{stockItem.colour.colourName}</p>
+    </Dropdown.Item>
   ));
 
   //Size list
   //TODO: How to eliminate the repeated? maybe it's better to display all sizes and just change disable the ones that are not found in the array
   const sizeList = productStocks.map((stockItem, i) => (
-    <Button variant='success' key={i} className='colour-btn-dp'>
-      {stockItem.size.size}
-    </Button>
+    <div>
+      <input
+        type='radio'
+        id={`size-${i}`}
+        name='size-choice'
+        value={stockItem.size.size}
+      ></input>
+      <label for={`size-${i}`}>{stockItem.size.size}</label>
+    </div>
+    // <Button variant='success' key={i} className='colour-btn-dp'>
+    //   {stockItem.size.size}
+    // </Button>
   ));
 
   return (
@@ -58,8 +86,12 @@ const DetailedProduct = () => {
           </p>
           <Form>
             <Form.Group className='mb-3' controlId='formColour'>
-              <Form.Label>Colors</Form.Label>
-              {colourList}
+              <Dropdown size='sm'>
+                <Dropdown.Toggle variant='success'>
+                  Select Color
+                </Dropdown.Toggle>
+                <Dropdown.Menu>{colourNodesDropdown}</Dropdown.Menu>
+              </Dropdown>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formSize'>
               <Form.Label>Sizes</Form.Label>
