@@ -1,13 +1,5 @@
 import React from 'react';
-import {
-  Button,
-  Carousel,
-  Col,
-  Container,
-  Row,
-  Form,
-  Dropdown,
-} from 'react-bootstrap';
+import { Button, Carousel, Col, Container, Row, Form } from 'react-bootstrap';
 
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
@@ -36,23 +28,18 @@ const DetailedProduct = () => {
   const productStocks = product.productStocks;
 
   const colourNodesDropdown = productStocks.map((stockItem, i) => (
-    <Dropdown.Item className='colour-dd' key={i}>
-      <img
-        className='colour-img'
-        src={stockItem.colour.colourImage}
-        alt={stockItem.colour.colourName}
-      />
+    <option key={i}>
       <p>{stockItem.colour.colourName}</p>
-    </Dropdown.Item>
+    </option>
   ));
 
   //Size list
   //TODO: How to eliminate the repeated? maybe it's better to display all sizes and just change disable the ones that are not found in the array
 
   const sizesNodesDropdown = productStocks.map((stockItem, i) => (
-    <Dropdown.Item className='colour-dd' key={i}>
+    <option key={i}>
       <p>{stockItem.size.size}</p>
-    </Dropdown.Item>
+    </option>
   ));
 
   return (
@@ -72,18 +59,16 @@ const DetailedProduct = () => {
           </p>
           <Form>
             <Form.Group className='mb-3' controlId='formColour'>
-              <Dropdown size='sm'>
-                <Dropdown.Toggle variant='success'>
-                  Select Color
-                </Dropdown.Toggle>
-                <Dropdown.Menu>{colourNodesDropdown}</Dropdown.Menu>
-              </Dropdown>
+              <Form.Select aria-label='Select color'>
+                <option>Select color</option>
+                {colourNodesDropdown}
+              </Form.Select>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formSize'>
-              <Dropdown size='sm'>
-                <Dropdown.Toggle variant='success'>Select Size</Dropdown.Toggle>
-                <Dropdown.Menu>{sizesNodesDropdown}</Dropdown.Menu>
-              </Dropdown>
+              <Form.Select aria-label='Select color'>
+                <option>Select size</option>
+                {sizesNodesDropdown}
+              </Form.Select>
             </Form.Group>
             <Button variant='success' type='submit'>
               Add to Cart
