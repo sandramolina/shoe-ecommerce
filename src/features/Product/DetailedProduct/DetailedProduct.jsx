@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Carousel, Col, Container, Row, Form } from 'react-bootstrap';
 
 import { useSelector } from 'react-redux';
@@ -9,6 +9,8 @@ import { selectByProductId } from '../ProductSlice';
 import './DetailedProduct.css';
 
 const DetailedProduct = () => {
+  const [sizes, setSizes] = useState([]);
+
   const { id } = useParams();
 
   //Selection of product
@@ -27,20 +29,29 @@ const DetailedProduct = () => {
   //Colours list
   const productStocks = product.productStocks;
 
-  const colourNodesDropdown = productStocks.map((stockItem, i) => (
-    <option key={i}>
-      <p>{stockItem.colour.colourName}</p>
-    </option>
+  const getColorList = productStocks.map(
+    (stockItem) => stockItem.colour.colourName
+  );
+
+  const uniqueColorList = [...new Set(getColorList)];
+
+  const colourNodesDropdown = uniqueColorList.map((colour, i) => (
+    <option key={i}>{colour}</option>
   ));
 
   //Size list
-  //TODO: How to eliminate the repeated? maybe it's better to display all sizes and just change disable the ones that are not found in the array
-
-  const sizesNodesDropdown = productStocks.map((stockItem, i) => (
-    <option key={i}>
-      <p>{stockItem.size.size}</p>
-    </option>
+  const sizesNodesDropdown = sizes.map((size, i) => (
+    <option key={i}>{size}</option>
   ));
+
+  const handleColourSelection = (e) => {
+    const selectedColour = e.target.value;
+    const itemsWithSelectedColour = productStocks.filter(
+      (item) => item.colour.colourName === selectedColour
+    );
+    const sizesList = itemsWithSelectedColour.map((item) => item.size.size);
+    setSizes(sizesList);
+  };
 
   return (
     <Container id='detailed-product-container'>
@@ -59,7 +70,10 @@ const DetailedProduct = () => {
           </p>
           <Form>
             <Form.Group className='mb-3' controlId='formColour'>
-              <Form.Select aria-label='Select color'>
+              <Form.Select
+                aria-label='Select color'
+                onChange={handleColourSelection}
+              >
                 <option>Select color</option>
                 {colourNodesDropdown}
               </Form.Select>
