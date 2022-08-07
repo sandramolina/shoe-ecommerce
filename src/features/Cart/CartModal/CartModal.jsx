@@ -11,7 +11,7 @@ const CartModal = () => {
   const dispatch = useDispatch();
   const handleClose = () => dispatch(closeCart());
   return (
-    <Offcanvas show={show} onHide={handleClose}>
+    <Offcanvas show={show} onHide={handleClose} scroll='true'>
       <Offcanvas.Header closeButton>
         <Offcanvas.Title>YOUR BAG</Offcanvas.Title>
       </Offcanvas.Header>
