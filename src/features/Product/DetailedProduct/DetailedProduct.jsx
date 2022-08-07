@@ -68,6 +68,8 @@ const DetailedProduct = () => {
       product,
       stockId,
       count: 1,
+      colour: colourState,
+      size: sizeState,
     };
     dispatch(addItemToCart(itemCartObject));
   };

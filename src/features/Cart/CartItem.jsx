@@ -2,6 +2,8 @@ import React from 'react';
 
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 
+import './CartItem.css';
+
 const CartItem = ({ productInCart }) => {
   const countTimesPrice =
     productInCart.count * productInCart.product.price.amount;
@@ -14,7 +16,8 @@ const CartItem = ({ productInCart }) => {
           src={productInCart.product.images[0]}
         />
         <Card.Title>{productInCart.product.title}</Card.Title>
-        <Card.Subtitle>TBD COLOUR</Card.Subtitle>
+        <Card.Subtitle>Colour: {productInCart.colour}</Card.Subtitle>
+        <Card.Subtitle>Size: {productInCart.size}</Card.Subtitle>
         <Container fluid>
           <Row>
             <Col>
@@ -26,16 +29,18 @@ const CartItem = ({ productInCart }) => {
           <hr />
           <Row>
             <Col>
-              <Button variant='primary' size='sm'>
+              <Button variant='success' size='sm'>
                 -
               </Button>
-              <span>{productInCart.count}</span>
-              <Button variant='primary' size='sm'>
+              <span id='count-number'>{productInCart.count}</span>
+              <Button variant='success' size='sm'>
                 +
               </Button>
             </Col>
             <Col>
-              <Button type='button'>TBD Remove</Button>
+              <Button type='button' variant='success'>
+                Remove
+              </Button>
             </Col>
             <Col className='subtotal-text'>
               Subtotal:
