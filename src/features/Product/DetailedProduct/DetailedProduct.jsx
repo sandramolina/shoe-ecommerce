@@ -34,15 +34,9 @@ const DetailedProduct = () => {
 
   //Colours list
   const productStocks = product.productStocks;
-  // const colourList = productStocks.map((stockItem, i) => (
-  //   <Button variant='success' key={i} className='colour-btn-dp'>
-  //     <img src={stockItem.colour.colourImage} alt='colour' width='20px' />
-  //     {stockItem.colour.colourName}
-  //   </Button>
-  // ));
 
-  const colourNodesDropdown = productStocks.map((stockItem) => (
-    <Dropdown.Item className='colour-dd'>
+  const colourNodesDropdown = productStocks.map((stockItem, i) => (
+    <Dropdown.Item className='colour-dd' key={i}>
       <img
         className='colour-img'
         src={stockItem.colour.colourImage}
@@ -54,19 +48,11 @@ const DetailedProduct = () => {
 
   //Size list
   //TODO: How to eliminate the repeated? maybe it's better to display all sizes and just change disable the ones that are not found in the array
-  const sizeList = productStocks.map((stockItem, i) => (
-    <div>
-      <input
-        type='radio'
-        id={`size-${i}`}
-        name='size-choice'
-        value={stockItem.size.size}
-      ></input>
-      <label for={`size-${i}`}>{stockItem.size.size}</label>
-    </div>
-    // <Button variant='success' key={i} className='colour-btn-dp'>
-    //   {stockItem.size.size}
-    // </Button>
+
+  const sizesNodesDropdown = productStocks.map((stockItem, i) => (
+    <Dropdown.Item className='colour-dd' key={i}>
+      <p>{stockItem.size.size}</p>
+    </Dropdown.Item>
   ));
 
   return (
@@ -94,8 +80,10 @@ const DetailedProduct = () => {
               </Dropdown>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formSize'>
-              <Form.Label>Sizes</Form.Label>
-              {sizeList}
+              <Dropdown size='sm'>
+                <Dropdown.Toggle variant='success'>Select Size</Dropdown.Toggle>
+                <Dropdown.Menu>{sizesNodesDropdown}</Dropdown.Menu>
+              </Dropdown>
             </Form.Group>
             <Button variant='success' type='submit'>
               Add to Cart
