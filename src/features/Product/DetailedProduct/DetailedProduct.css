@@ -40,5 +40,13 @@
 @media (min-width: 700px) {
   #top-section {
     flex-direction: row;
+    align-items: center;
+  }
+  #img-carousel {
+    display: flex;
+    justify-content: center;
+  }
+  #img-carousel-inner {
+    max-width: 70%;
   }
 }

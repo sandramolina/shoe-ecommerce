@@ -44,8 +44,10 @@ const DetailedProduct = () => {
   return (
     <Container id='detailed-product-container'>
       <Row id='top-section'>
-        <Col>
-          <Carousel variant='dark'>{carouselNodes}</Carousel>
+        <Col id='img-carousel'>
+          <Carousel variant='dark' id='img-carousel-inner'>
+            {carouselNodes}
+          </Carousel>
         </Col>
         <Col>
           {product.brand}
