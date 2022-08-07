@@ -10,6 +10,8 @@ import './DetailedProduct.css';
 
 const DetailedProduct = () => {
   const [sizes, setSizes] = useState([]);
+  const [colourState, setColourState] = useState('');
+  const [sizeState, setSizeState] = useState('');
 
   const { id } = useParams();
 
@@ -46,11 +48,30 @@ const DetailedProduct = () => {
 
   const handleColourSelection = (e) => {
     const selectedColour = e.target.value;
+    setColourState(selectedColour);
     const itemsWithSelectedColour = productStocks.filter(
       (item) => item.colour.colourName === selectedColour
     );
     const sizesList = itemsWithSelectedColour.map((item) => item.size.size);
     setSizes(sizesList);
+  };
+
+  const handleSizeSelection = (e) => setSizeState(Number(e.target.value));
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const stockId = getItemId(colourState, sizeState);
+    console.log(stockId);
+  };
+
+  const getItemId = (colourState, sizeState) => {
+    const tempList = productStocks.filter(
+      (stockItem) =>
+        (stockItem.size.size === sizeState) &
+        (stockItem.colour.colourName === colourState)
+    );
+    const stockItemId = tempList[0].product_stock_id;
+    return stockItemId;
   };
 
   return (
@@ -68,7 +89,7 @@ const DetailedProduct = () => {
             Rating: {product.rating.averageRate}
             <span className='rate-count'>({product.rating.count} Reviews)</span>
           </p>
-          <Form>
+          <Form onSubmit={handleFormSubmit}>
             <Form.Group className='mb-3' controlId='formColour'>
               <Form.Select
                 aria-label='Select color'
@@ -79,7 +100,10 @@ const DetailedProduct = () => {
               </Form.Select>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formSize'>
-              <Form.Select aria-label='Select color'>
+              <Form.Select
+                aria-label='Select size'
+                onChange={handleSizeSelection}
+              >
                 <option>Select size</option>
                 {sizesNodesDropdown}
               </Form.Select>
