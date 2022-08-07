@@ -10,6 +10,7 @@ import NewModels from './features/NewModels/NewModels';
 import BestSellers from './features/BestSellers/BestSellers';
 import Footer from './features/Footer/Footer';
 import ProductGrid from './features/Product/ProductGrid';
+import DetailedProduct from './features/Product/DetailedProduct/DetailedProduct';
 
 import { getProductData } from './features/Product/ProductSlice';
 
@@ -39,6 +40,7 @@ function App() {
             }
           />
           <Route path='products' element={<ProductGrid />} />
+          <Route path='detailedItem/:id' element={<DetailedProduct />} />
         </Routes>
         <Footer />
       </BrowserRouter>

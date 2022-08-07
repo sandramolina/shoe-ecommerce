@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import Product from './Product';
+import './ProductGrid.css';
 
 const ProductGrid = () => {
   const productsToShow = useSelector((state) => state.productsState.products);

@@ -1,5 +1,9 @@
 import React from 'react';
+
+import { Link } from 'react-router-dom';
 import { Button, Card } from 'react-bootstrap';
+
+import './Product.css';
 
 const Product = ({ product }) => {
   return (
@@ -17,7 +21,14 @@ const Product = ({ product }) => {
           {product.price.currencyUnit.symbol} {product.price.amount}
         </Card.Text>
         <div className='card-bottom'>
-          <Button className='shop-text'>SHOP</Button>
+          <Button
+            variant='success'
+            className='shop-text'
+            as={Link}
+            to={`/detailedItem/${product.id}`}
+          >
+            SHOP
+          </Button>
         </div>
       </Card.Body>
     </Card>

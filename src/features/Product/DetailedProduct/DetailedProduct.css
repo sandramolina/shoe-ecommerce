@@ -1,0 +1,52 @@
+.rate-count {
+  font-weight: bold;
+  color: green;
+}
+
+.colour-img {
+  padding: 1%;
+  width: 10%;
+}
+
+.colour-dd {
+  display: flex;
+  align-items: flex-start;
+}
+
+.colour-dd-tt {
+  margin: 2%;
+  color: white !important;
+  font-weight: bold;
+  width: 90%;
+}
+
+.colour-btn-dp {
+  margin: 0.5vw;
+}
+
+#top-section {
+  flex-direction: column;
+}
+
+#bottom-section {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+#prod-specifications {
+  margin-top: 1rem;
+}
+
+@media (min-width: 700px) {
+  #top-section {
+    flex-direction: row;
+    align-items: center;
+  }
+  #img-carousel {
+    display: flex;
+    justify-content: center;
+  }
+  #img-carousel-inner {
+    max-width: 70%;
+  }
+}
