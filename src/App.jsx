@@ -11,6 +11,7 @@ import BestSellers from './features/BestSellers/BestSellers';
 import Footer from './features/Footer/Footer';
 import ProductGrid from './features/Product/ProductGrid';
 import DetailedProduct from './features/Product/DetailedProduct/DetailedProduct';
+import CartModal from './features/Cart/CartModal/CartModal';
 
 import { getProductData } from './features/Product/ProductSlice';
 
@@ -42,6 +43,7 @@ function App() {
           <Route path='products' element={<ProductGrid />} />
           <Route path='detailedItem/:id' element={<DetailedProduct />} />
         </Routes>
+        <CartModal />
         <Footer />
       </BrowserRouter>
     </div>
