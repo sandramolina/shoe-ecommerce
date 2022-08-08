@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Facebook, Instagram, Twitch, Twitter } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 
 import './Footer.css';
 
@@ -23,9 +24,14 @@ const Footer = () => {
         </Col>
         <hr />
         <Col>
-          <h3>GET HELP</h3>
-          <h3>ABOUT GOLDE SHOE</h3>
-          <h3>FIND US</h3>
+          <nav>
+            <h3>GET HELP</h3>
+            <h3>
+              <Link to='/faqs'>FAQs</Link>
+            </h3>
+            <h3>ABOUT GOLDEN SHOE</h3>
+            <h3>FIND US</h3>
+          </nav>
         </Col>
       </Row>
       <Row>
