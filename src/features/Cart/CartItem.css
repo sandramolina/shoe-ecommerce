@@ -6,3 +6,7 @@
 .subtotal-text {
   font-weight: bold;
 }
+
+#remove-button {
+  padding: 1px, 1px, 1px, 1px;
+}

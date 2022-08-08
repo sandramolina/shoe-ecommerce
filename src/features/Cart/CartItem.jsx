@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Trash } from 'react-bootstrap-icons';
 
 import './CartItem.css';
 
@@ -38,8 +39,8 @@ const CartItem = ({ productInCart }) => {
               </Button>
             </Col>
             <Col>
-              <Button type='button' variant='success'>
-                Remove
+              <Button type='button' variant='success' id='remove-button'>
+                <Trash size={15} />
               </Button>
             </Col>
             <Col className='subtotal-text'>
