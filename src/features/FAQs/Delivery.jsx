@@ -50,7 +50,7 @@ const Delivery = () => {
           your order is already in transit and the courier can’t deliver it due
           to the wrong address, it will be automatically returned to our
           warehouse and refunded. We advise you to check and update the shipping
-          details in your Foot Locker account to avoid any future issues.
+          details in your Golden Shoe account to avoid any future issues.
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey='4'>
