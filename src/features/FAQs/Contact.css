@@ -2,6 +2,6 @@
   margin-bottom: 1rem;
 }
 
-span {
+label > span {
   color: red;
 }
