@@ -11,7 +11,7 @@ const Footer = () => {
     <Container className='footer' fluid>
       <Row>
         <Col className='text-center container-top'>
-          <Button className='top' />
+          <Button className='top' variant='success' />
         </Col>
       </Row>
       <Row className='text-center'>
@@ -20,12 +20,14 @@ const Footer = () => {
           <Facebook size={35} className='social-media' />
           <Twitch size={35} className='social-media' />
           <Twitter size={35} className='social-media' />
-          <Instagram size={35} />
+          <Instagram size={35} className='social-media' />
         </Col>
         <hr />
         <Col>
           <nav>
-            <h3>GET HELP</h3>
+            <h3>
+              <Link to='/contact'>GET HELP</Link>
+            </h3>
             <h3>
               <Link to='/faqs'>FAQs</Link>
             </h3>

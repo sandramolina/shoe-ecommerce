@@ -8,12 +8,8 @@ import Returns from './Returns';
 
 const FAQs = () => {
   return (
-    <Tabs
-      defaultActiveKey='profile'
-      id='uncontrolled-tab-example'
-      className='mb-3'
-    >
-      <Tab eventKey='home' title='Delivery'>
+    <Tabs defaultActiveKey='delivery' id='uncontrolled-tab' className='mb-3'>
+      <Tab eventKey='delivery' title='Delivery'>
         <Delivery />
       </Tab>
       <Tab eventKey='returns' title='Returns'>
