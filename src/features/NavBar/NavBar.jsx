@@ -22,9 +22,9 @@ function NavBar() {
   return (
     <Navbar bg='dark' expand='lg' variant='dark'>
       <Container fluid>
-        <Link to='/'>
-          <Navbar.Brand>Golden Shoe</Navbar.Brand>
-        </Link>
+        <Navbar.Brand as={Link} to='/'>
+          Golden Shoe
+        </Navbar.Brand>
 
         <Navbar.Toggle aria-controls='navbarScroll' />
         <Navbar.Collapse id='navbarScroll'>

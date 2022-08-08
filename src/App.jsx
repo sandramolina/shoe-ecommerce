@@ -16,6 +16,8 @@ import CartModal from './features/Cart/CartModal/CartModal';
 import { getProductData } from './features/Product/ProductSlice';
 
 import './App.css';
+import FAQs from './features/FAQs/FAQs';
+import Contact from './features/FAQs/Contact';
 
 function App() {
   const distpatch = useDispatch();
@@ -42,6 +44,8 @@ function App() {
           />
           <Route path='products' element={<ProductGrid />} />
           <Route path='detailedItem/:id' element={<DetailedProduct />} />
+          <Route path='faqs' element={<FAQs />} />
+          <Route path='contact' element={<Contact />} />
         </Routes>
         <CartModal />
         <Footer />
