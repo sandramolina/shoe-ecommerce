@@ -75,13 +75,18 @@ const DetailedProduct = () => {
   };
 
   const getItemId = (colourState, sizeState) => {
-    const tempList = productStocks.filter(
-      (stockItem) =>
-        (stockItem.size.size === sizeState) &
-        (stockItem.colour.colourName === colourState)
-    );
-    const stockItemId = tempList[0].product_stock_id;
-    return stockItemId;
+    console.log(colourState, sizeState);
+    if (colourState === '' || sizeState === '') {
+      alert('Please chose a valid Colour and Size');
+    } else {
+      const tempList = productStocks.filter(
+        (stockItem) =>
+          (stockItem.size.size === sizeState) &
+          (stockItem.colour.colourName === colourState)
+      );
+      const stockItemId = tempList[0].product_stock_id;
+      return stockItemId;
+    }
   };
 
   return (
@@ -106,7 +111,7 @@ const DetailedProduct = () => {
                 onChange={handleColourSelection}
                 required
               >
-                <option>Select color</option>
+                <option value=''>Select color</option>
                 {colourNodesDropdown}
               </Form.Select>
             </Form.Group>
@@ -116,7 +121,7 @@ const DetailedProduct = () => {
                 onChange={handleSizeSelection}
                 required
               >
-                <option>Select size</option>
+                <option value=''>Select size</option>
                 {sizesNodesDropdown}
               </Form.Select>
             </Form.Group>
