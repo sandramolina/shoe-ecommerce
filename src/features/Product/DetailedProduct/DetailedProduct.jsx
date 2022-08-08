@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Carousel, Col, Container, Row, Form } from 'react-bootstrap';
 
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import { selectByProductId } from '../ProductSlice';
+import { addItemToCart } from '../../Cart/CartItemSlice';
 
 import './DetailedProduct.css';
 
 const DetailedProduct = () => {
+  const [sizes, setSizes] = useState([]);
+  const [colourState, setColourState] = useState('');
+  const [sizeState, setSizeState] = useState('');
+
+  const dispatch = useDispatch();
+
   const { id } = useParams();
 
   //Selection of product
@@ -26,20 +33,61 @@ const DetailedProduct = () => {
 
   //Colours list
   const productStocks = product.productStocks;
-  const colourList = productStocks.map((stockItem, i) => (
-    <Button variant='success' key={i} className='colour-btn-dp'>
-      <img src={stockItem.colour.colourImage} alt='colour' width='20px' />
-      {stockItem.colour.colourName}
-    </Button>
+
+  const getColorList = productStocks.map(
+    (stockItem) => stockItem.colour.colourName
+  );
+
+  const uniqueColorList = [...new Set(getColorList)];
+
+  const colourNodesDropdown = uniqueColorList.map((colour, i) => (
+    <option key={i}>{colour}</option>
   ));
 
   //Size list
-  //TODO: How to eliminate the repeated? maybe it's better to display all sizes and just change disable the ones that are not found in the array
-  const sizeList = productStocks.map((stockItem, i) => (
-    <Button variant='success' key={i} className='colour-btn-dp'>
-      {stockItem.size.size}
-    </Button>
+  const sizesNodesDropdown = sizes.map((size, i) => (
+    <option key={i}>{size}</option>
   ));
+
+  const handleColourSelection = (e) => {
+    const selectedColour = e.target.value;
+    setColourState(selectedColour);
+    const itemsWithSelectedColour = productStocks.filter(
+      (item) => item.colour.colourName === selectedColour
+    );
+    const sizesList = itemsWithSelectedColour.map((item) => item.size.size);
+    setSizes(sizesList);
+  };
+
+  const handleSizeSelection = (e) => setSizeState(Number(e.target.value));
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const stockId = getItemId(colourState, sizeState);
+    const itemCartObject = {
+      product,
+      stockId,
+      count: 1,
+      colour: colourState,
+      size: sizeState,
+    };
+    dispatch(addItemToCart(itemCartObject));
+  };
+
+  const getItemId = (colourState, sizeState) => {
+    console.log(colourState, sizeState);
+    if (colourState === '' || sizeState === '') {
+      alert('Please chose a valid Colour and Size');
+    } else {
+      const tempList = productStocks.filter(
+        (stockItem) =>
+          (stockItem.size.size === sizeState) &
+          (stockItem.colour.colourName === colourState)
+      );
+      const stockItemId = tempList[0].product_stock_id;
+      return stockItemId;
+    }
+  };
 
   return (
     <Container id='detailed-product-container'>
@@ -56,14 +104,26 @@ const DetailedProduct = () => {
             Rating: {product.rating.averageRate}
             <span className='rate-count'>({product.rating.count} Reviews)</span>
           </p>
-          <Form>
+          <Form onSubmit={handleFormSubmit}>
             <Form.Group className='mb-3' controlId='formColour'>
-              <Form.Label>Colors</Form.Label>
-              {colourList}
+              <Form.Select
+                aria-label='Select color'
+                onChange={handleColourSelection}
+                required
+              >
+                <option value=''>Select color</option>
+                {colourNodesDropdown}
+              </Form.Select>
             </Form.Group>
             <Form.Group className='mb-3' controlId='formSize'>
-              <Form.Label>Sizes</Form.Label>
-              {sizeList}
+              <Form.Select
+                aria-label='Select size'
+                onChange={handleSizeSelection}
+                required
+              >
+                <option value=''>Select size</option>
+                {sizesNodesDropdown}
+              </Form.Select>
             </Form.Group>
             <Button variant='success' type='submit'>
               Add to Cart

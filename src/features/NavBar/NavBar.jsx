@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
@@ -12,7 +13,12 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import './NavBar.css';
 import { ReactComponent as ShoppingBag } from '../../img/shoppingbag.svg';
 
+import { openCart } from '../Cart/CartModal/CartModalSlice';
+
 function NavBar() {
+  const dispatch = useDispatch();
+  const clickOnCart = () => dispatch(openCart());
+
   return (
     <Navbar bg='dark' expand='lg' variant='dark'>
       <Container fluid>
@@ -50,7 +56,7 @@ function NavBar() {
           </Nav>
         </Navbar.Collapse>
 
-        <ShoppingBag className='bag' />
+        <ShoppingBag className='bag' onClick={clickOnCart} />
       </Container>
     </Navbar>
   );
