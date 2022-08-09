@@ -18,3 +18,18 @@ td > ul {
 #quantity-col {
   min-width: 100px;
 }
+
+#discount-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+#input-promo-code {
+  min-width: 240px;
+}
+
+#apply-code-btn {
+  margin-left: 3px;
+}

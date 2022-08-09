@@ -3,6 +3,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { Trash } from 'react-bootstrap-icons';
 
 import './CheckOut.css';
@@ -67,6 +68,18 @@ const CheckOut = () => {
         </thead>
         <tbody>{productsInCartRows}</tbody>
       </Table>
+      <Form id='discount-form'>
+        <Form.Group className='mb-3'>
+          <Form.Control
+            id='input-promo-code'
+            type='text'
+            placeholder='Enter here your promo code'
+          />
+        </Form.Group>
+        <Button variant='success' type='submit' id='apply-code-btn'>
+          Apply
+        </Button>
+      </Form>
     </div>
   );
 };
