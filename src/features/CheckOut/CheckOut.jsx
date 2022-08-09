@@ -96,7 +96,7 @@ const CheckOut = () => {
             {productsInCart.length} items: £{totalCart}
           </Card.Title>
           <Card.Subtitle className='mb-2 text-muted'>
-            Delivery £ 3.50
+            Delivery to UK £ 3.50
           </Card.Subtitle>
           <Card.Subtitle className='mb-2 text-muted'>
             Discount -£ 0.00
@@ -128,13 +128,6 @@ const CheckOut = () => {
             Address<span>*</span>
           </Form.Label>
           <Form.Control placeholder='12/3 Main St' />
-        </Form.Group>
-
-        <Form.Group className='mb-3'>
-          <Form.Label>
-            Postal Code<span>*</span>
-          </Form.Label>
-          <Form.Control placeholder='AA01 BB23' />
         </Form.Group>
 
         <Form.Group className='mb-3'>
