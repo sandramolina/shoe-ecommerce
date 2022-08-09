@@ -7,14 +7,21 @@ import Form from 'react-bootstrap/Form';
 import { Trash } from 'react-bootstrap-icons';
 
 import './CheckOut.css';
+import { Card } from 'react-bootstrap';
 
 const CheckOut = () => {
   const productsInCart = useSelector((state) => state.cart.items);
 
   const getSubtotal = (price, quantity) => price * quantity;
 
-  //   const countTimesPrice =
-  //     productInCart.count * productInCart.product.price.amount;
+  const totalCart = productsInCart.reduce(
+    (runninTotal, currentCartItem) =>
+      runninTotal +
+      currentCartItem.product.price.amount * currentCartItem.count,
+    0
+  );
+
+  const getTax = (purchase) => Math.round(purchase * 0.2);
 
   const productsInCartRows = productsInCart.map((productInCart, i) => (
     <tr key={i}>
@@ -80,6 +87,23 @@ const CheckOut = () => {
           Apply
         </Button>
       </Form>
+      <Card id='summary-purchase'>
+        <Card.Body>
+          <Card.Header>Order Summary</Card.Header>
+          <Card.Title>
+            {productsInCart.length} items: £{totalCart}
+          </Card.Title>
+          <Card.Subtitle className='mb-2 text-muted'>
+            Delivery £ 3.50
+          </Card.Subtitle>
+          <Card.Subtitle className='mb-2 text-muted'>
+            Discount -£ 0.00
+          </Card.Subtitle>
+          <hr />
+          <Card.Title>Total to pay: £ {totalCart + 3.5}</Card.Title>
+          (inclusive of tax £ {getTax(totalCart)})
+        </Card.Body>
+      </Card>
     </div>
   );
 };
