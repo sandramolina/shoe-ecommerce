@@ -122,6 +122,34 @@ const CheckOut = () => {
           </Form.Label>
           <Form.Control required type='text' placeholder='Full Name' />
         </Form.Group>
+
+        <Form.Group className='mb-3'>
+          <Form.Label>
+            Address<span>*</span>
+          </Form.Label>
+          <Form.Control placeholder='12/3 Main St' />
+        </Form.Group>
+
+        <Form.Group className='mb-3'>
+          <Form.Label>
+            Postal Code<span>*</span>
+          </Form.Label>
+          <Form.Control placeholder='AA01 BB23' />
+        </Form.Group>
+
+        <Form.Group className='mb-3'>
+          <Form.Label>
+            Postal Code<span>*</span>
+          </Form.Label>
+          <Form.Control placeholder='AA01 BB23' />
+        </Form.Group>
+
+        <Form.Check label='*I accept Terms and Conditions and Privacy policy.' />
+        <Form.Check label='I want to receive the E-mail Newsletter (future unsubscription possible)' />
+
+        <Button variant='success' type='submit'>
+          Next
+        </Button>
       </Form>
     </div>
   );
