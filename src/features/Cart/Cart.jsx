@@ -33,7 +33,9 @@ const Cart = () => {
       <h3>Total Purchase: £{totalCart}</h3>
       {productsInCart.length !== 0 ? (
         <Button variant='success' onClick={handleCheckOutClick}>
-          <Link to='/checkout'>Checkout</Link>
+          <Link to='/checkout' id='checkout-link'>
+            Checkout
+          </Link>
         </Button>
       ) : null}
     </div>
