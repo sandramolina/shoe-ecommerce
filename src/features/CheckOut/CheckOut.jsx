@@ -56,7 +56,9 @@ const CheckOut = () => {
         </Button>
         <p>
           There are{' '}
-          {getStockCount(productInCart.stockId, productInCart.product)} left!
+          {getStockCount(productInCart.stockId, productInCart.product) -
+            productInCart.count}{' '}
+          left!
         </p>
       </td>
       <td>
