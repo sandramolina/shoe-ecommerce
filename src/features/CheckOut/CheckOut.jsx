@@ -23,6 +23,14 @@ const CheckOut = () => {
 
   const getTax = (purchase) => Math.round(purchase * 0.2);
 
+  const getStockCount = (stockId, product) => {
+    const productStocksList = product.productStocks;
+    const stockArray = productStocksList.filter(
+      (stock) => stock.product_stock_id === stockId
+    );
+    return stockArray[0].stock_count;
+  };
+
   const productsInCartRows = productsInCart.map((productInCart, i) => (
     <tr key={i}>
       <td>{i + 1}</td>
@@ -46,6 +54,10 @@ const CheckOut = () => {
         <Button variant='success' size='sm'>
           +
         </Button>
+        <p>
+          There are{' '}
+          {getStockCount(productInCart.stockId, productInCart.product)} left!
+        </p>
       </td>
       <td>
         £ {getSubtotal(productInCart.product.price.amount, productInCart.count)}
