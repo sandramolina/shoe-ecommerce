@@ -55,6 +55,50 @@ const Returns = () => {
           in its original box/packaging, with all original labels attached.{' '}
         </Accordion.Body>
       </Accordion.Item>
+      <Accordion.Item eventKey='5'>
+        <Accordion.Header>How can I return a gift?</Accordion.Header>
+        <Accordion.Body>
+          No, this is not possible. Each item you are returning will need to be
+          in its original box/packaging, with all original labels attached.{' '}
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='6'>
+        <Accordion.Header>
+          Can I return items from different orders in one box?
+        </Accordion.Header>
+        <Accordion.Body>
+          No, this is not possible. Each item you are returning will need to be
+          in its original box/packaging, with all original labels attached.{' '}
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='7'>
+        <Accordion.Header>Can I amend my order?</Accordion.Header>
+        <Accordion.Body>
+          No, this is not possible. Each item you are returning will need to be
+          in its original box/packaging, with all original labels attached.{' '}
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='8'>
+        <Accordion.Header>When do I get my refund?</Accordion.Header>
+        <Accordion.Body>
+          No, this is not possible. Each item you are returning will need to be
+          in its original box/packaging, with all original labels attached.{' '}
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='9'>
+        <Accordion.Header>Where is my refund credited?</Accordion.Header>
+        <Accordion.Body>
+          No, this is not possible. Each item you are returning will need to be
+          in its original box/packaging, with all original labels attached.{' '}
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='10'>
+        <Accordion.Header>Will you refund the postage cost?</Accordion.Header>
+        <Accordion.Body>
+          No, this is not possible. Each item you are returning will need to be
+          in its original box/packaging, with all original labels attached.{' '}
+        </Accordion.Body>
+      </Accordion.Item>
     </Accordion>
   );
 };

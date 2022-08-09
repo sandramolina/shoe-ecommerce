@@ -9,3 +9,14 @@
 .bold-txt {
   font-weight: bold;
 }
+
+.product-title {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+#checkout-link {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
