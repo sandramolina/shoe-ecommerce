@@ -54,7 +54,40 @@ const Delivery = () => {
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey='4'>
+        <Accordion.Header>Can I order & collect from a store?</Accordion.Header>
+        <Accordion.Body>
+          Store collection is available. You can select a delivery option and
+          collect an order from any of our stores nationwide.
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='5'>
+        <Accordion.Header>
+          How do I know if my items have been despatched?
+        </Accordion.Header>
+        <Accordion.Body>TBD</Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='6'>
         <Accordion.Header>Where is my tracking number?</Accordion.Header>
+        <Accordion.Body>TBD</Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='7'>
+        <Accordion.Header>
+          What happens if I'm out when you deliver?
+        </Accordion.Header>
+        <Accordion.Body>TBD</Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='8'>
+        <Accordion.Header>
+          Can I have my order delivered to another address?
+        </Accordion.Header>
+        <Accordion.Body>TBD</Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='9'>
+        <Accordion.Header>What are your delivery charges?</Accordion.Header>
+        <Accordion.Body>TBD</Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey='10'>
+        <Accordion.Header>Where do you deliver to?</Accordion.Header>
         <Accordion.Body>TBD</Accordion.Body>
       </Accordion.Item>
     </Accordion>
