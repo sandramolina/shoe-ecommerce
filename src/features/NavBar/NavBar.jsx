@@ -61,6 +61,7 @@ function NavBar() {
             </Form>
           </Nav>
         </Navbar.Collapse>
+        {/* <Link to='/faqs'>ACCOUNT</Link> */}
         <ShoppingBag className='bag' onClick={clickOnCart} />
         <Navbar.Toggle aria-controls='navbarScroll' />
       </Container>
