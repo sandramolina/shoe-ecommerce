@@ -75,6 +75,7 @@ const CheckOut = () => {
         </thead>
         <tbody>{productsInCartRows}</tbody>
       </Table>
+
       <Form id='discount-form'>
         <Form.Group className='mb-3'>
           <Form.Control
@@ -87,6 +88,7 @@ const CheckOut = () => {
           Apply
         </Button>
       </Form>
+
       <Card id='summary-purchase'>
         <Card.Body>
           <Card.Header>Order Summary</Card.Header>
@@ -104,6 +106,23 @@ const CheckOut = () => {
           (inclusive of tax £ {getTax(totalCart)})
         </Card.Body>
       </Card>
+
+      <Form id='billings-shipping-info'>
+        <h4>Billings and Shipping Information</h4>
+        <Form.Group className='mb-3' controlId='formBasicEmail'>
+          <Form.Label>
+            Email Address<span>*</span>
+          </Form.Label>
+          <Form.Control type='email' placeholder='name@example.com' required />
+        </Form.Group>
+
+        <Form.Group className='mb-3'>
+          <Form.Label>
+            Full Name<span>*</span>
+          </Form.Label>
+          <Form.Control required type='text' placeholder='Full Name' />
+        </Form.Group>
+      </Form>
     </div>
   );
 };

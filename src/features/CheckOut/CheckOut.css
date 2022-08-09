@@ -36,3 +36,13 @@ td > ul {
 
 /* #summary-purchase {
 } */
+
+#billings-shipping-info {
+  margin-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  #billings-shipping-info {
+    width: 35%;
+  }
+}
