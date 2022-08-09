@@ -1,0 +1,20 @@
+.checkout-container {
+  margin: 2rem;
+}
+
+td > ul {
+  list-style: none;
+}
+
+#prod-details-column {
+  min-width: 210px;
+}
+
+#unit-price-col,
+#total-col {
+  min-width: 92px;
+}
+
+#quantity-col {
+  min-width: 100px;
+}

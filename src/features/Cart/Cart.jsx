@@ -24,6 +24,7 @@ const Cart = () => {
   );
 
   const handleCheckOutClick = () => dispatch(closeCart());
+
   return (
     <div>
       <h4>{productsInCart.length} items in the bag</h4>
