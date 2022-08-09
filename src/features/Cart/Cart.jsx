@@ -1,11 +1,15 @@
 import React from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'react-bootstrap';
 
+import { closeCart } from './CartModal/CartModalSlice';
 import CartItem from './CartItem';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
+  const dispatch = useDispatch();
+
   const productsInCart = useSelector((state) => state.cart.items);
 
   const productsInCartNodes = productsInCart.map((productInCart, i) => (
@@ -19,7 +23,8 @@ const Cart = () => {
     0
   );
 
-  const handleCheckOutClick = () => console.log('HEYY');
+  const handleCheckOutClick = () => dispatch(closeCart());
+
   return (
     <div>
       <h4>{productsInCart.length} items in the bag</h4>
@@ -28,7 +33,7 @@ const Cart = () => {
       <h3>Total Purchase: £{totalCart}</h3>
       {productsInCart.length !== 0 ? (
         <Button variant='success' onClick={handleCheckOutClick}>
-          Checkout
+          <Link to='/checkout'>Checkout</Link>
         </Button>
       ) : null}
     </div>

@@ -1,0 +1,48 @@
+.checkout-container {
+  margin: 2rem;
+}
+
+td > ul {
+  list-style: none;
+}
+
+#prod-details-column {
+  min-width: 210px;
+}
+
+#unit-price-col,
+#total-col {
+  min-width: 92px;
+}
+
+#quantity-col {
+  min-width: 100px;
+}
+
+#discount-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  align-content: stretch;
+}
+
+#input-promo-code {
+  min-width: 240px;
+}
+
+#apply-code-btn {
+  margin-left: 3px;
+}
+
+/* #summary-purchase {
+} */
+
+#billings-shipping-info {
+  margin-top: 1rem;
+}
+
+@media (min-width: 992px) {
+  #billings-shipping-info {
+    width: 35%;
+  }
+}

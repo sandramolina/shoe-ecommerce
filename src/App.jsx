@@ -18,6 +18,7 @@ import { getProductData } from './features/Product/ProductSlice';
 import './App.css';
 import FAQs from './features/FAQs/FAQs';
 import Contact from './features/FAQs/Contact';
+import CheckOut from './features/CheckOut/CheckOut';
 
 function App() {
   const distpatch = useDispatch();
@@ -46,6 +47,7 @@ function App() {
           <Route path='detailedItem/:id' element={<DetailedProduct />} />
           <Route path='faqs' element={<FAQs />} />
           <Route path='contact' element={<Contact />} />
+          <Route path='checkout' element={<CheckOut />} />
         </Routes>
         <CartModal />
         <Footer />
