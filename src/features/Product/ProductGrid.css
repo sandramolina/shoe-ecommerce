@@ -1,11 +1,17 @@
 .products {
   margin: 2rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 }
 
-@media (max-width: 1601px) {
+@media (min-width: 992px) {
+  .products {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+/* @media (max-width: 1601px) {
   .products {
     grid-template-columns: repeat(5, 1fr);
   }
@@ -23,8 +29,8 @@
   }
 }
 
-/* @media (max-width: 621px) {
-    .products {
-      grid-template-columns: 2fr;
-    }
-  } */
+@media (max-width: 621px) {
+  .products {
+    grid-template-columns: 2fr;
+  }
+} */
