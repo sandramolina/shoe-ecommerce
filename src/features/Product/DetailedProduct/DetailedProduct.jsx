@@ -75,7 +75,6 @@ const DetailedProduct = () => {
   };
 
   const getItemId = (colourState, sizeState) => {
-    console.log(colourState, sizeState);
     if (colourState === '' || sizeState === '') {
       alert('Please chose a valid Colour and Size');
     } else {

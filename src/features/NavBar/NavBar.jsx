@@ -26,14 +26,15 @@ function NavBar() {
           Golden Shoe
         </Navbar.Brand>
 
-        <Navbar.Toggle aria-controls='navbarScroll' />
         <Navbar.Collapse id='navbarScroll'>
           <Nav
             className='me-auto my-2 my-lg-0'
-            style={{ maxHeight: '100px' }}
+            style={{ maxHeight: '500px' }}
             navbarScroll
           >
-            <Nav.Link>HOME</Nav.Link>
+            <Nav.Link as={Link} to='/'>
+              HOME
+            </Nav.Link>
             <NavDropdown title='PRODUCTS' id='navbarScrollingDropdown'>
               <NavDropdown.Item as={Link} to='/products'>
                 ALL
@@ -42,7 +43,12 @@ function NavBar() {
               <NavDropdown.Item>WOMENS</NavDropdown.Item>
               <NavDropdown.Item>KIDS</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link>TRENDS</Nav.Link>
+            <Nav.Link as={Link} to='/contact'>
+              GET HELP
+            </Nav.Link>
+            <Nav.Link as={Link} to='/faqs'>
+              FAQs
+            </Nav.Link>
 
             <Form className='d-flex'>
               <Form.Control
@@ -55,8 +61,9 @@ function NavBar() {
             </Form>
           </Nav>
         </Navbar.Collapse>
-
+        {/* <Link to='/faqs'>ACCOUNT</Link> */}
         <ShoppingBag className='bag' onClick={clickOnCart} />
+        <Navbar.Toggle aria-controls='navbarScroll' />
       </Container>
     </Navbar>
   );
