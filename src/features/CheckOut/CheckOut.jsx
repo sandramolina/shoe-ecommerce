@@ -107,7 +107,7 @@ const CheckOut = () => {
         <Card.Body>
           <Card.Header>Order Summary</Card.Header>
           <Card.Title>
-            {productsInCart.length} items: £{totalCart}
+            {productsInCart.length} items: £{Math.floor(totalCart)}
           </Card.Title>
           <Card.Subtitle className='mb-2 text-muted'>
             Delivery to UK £ 3.50
@@ -116,8 +116,8 @@ const CheckOut = () => {
             Discount -£ 0.00
           </Card.Subtitle>
           <hr />
-          <Card.Title>Total to pay: £ {totalCart + 3.5}</Card.Title>
-          (inclusive of tax £ {getTax(totalCart)})
+          <Card.Title>Total to pay: £ {Math.floor(totalCart) + 3.5}</Card.Title>
+          (inclusive of tax £ {getTax(Math.floor(totalCart))})
         </Card.Body>
       </Card>
 
