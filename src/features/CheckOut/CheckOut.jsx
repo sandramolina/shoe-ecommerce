@@ -21,7 +21,7 @@ const CheckOut = () => {
     0
   );
 
-  const getTax = (purchase) => Math.round(purchase * 0.2);
+  const getTax = (purchase) => Math.round(purchase * 0.2 * 100) / 100;
 
   const getStockCount = (stockId, product) => {
     const productStocksList = product.productStocks;
@@ -89,7 +89,6 @@ const CheckOut = () => {
         </thead>
         <tbody>{productsInCartRows}</tbody>
       </Table>
-
       <Form id='discount-form'>
         <Form.Group className='mb-3'>
           <Form.Control
@@ -107,7 +106,7 @@ const CheckOut = () => {
         <Card.Body>
           <Card.Header>Order Summary</Card.Header>
           <Card.Title>
-            {productsInCart.length} items: £{Math.floor(totalCart)}
+            {productsInCart.length} items: £{Math.round(totalCart * 100) / 100}
           </Card.Title>
           <Card.Subtitle className='mb-2 text-muted'>
             Delivery to UK £ 3.50
@@ -116,11 +115,12 @@ const CheckOut = () => {
             Discount -£ 0.00
           </Card.Subtitle>
           <hr />
-          <Card.Title>Total to pay: £ {Math.floor(totalCart) + 3.5}</Card.Title>
-          (inclusive of tax £ {getTax(Math.floor(totalCart))})
+          <Card.Title>
+            Total to pay: £ {Math.round(totalCart * 100) / 100 + 3.5}
+          </Card.Title>
+          (inclusive of tax £ {getTax(totalCart)})
         </Card.Body>
       </Card>
-
       <Form id='billings-shipping-info'>
         <h4>Billings and Shipping Information</h4>
         <Form.Group className='mb-3' controlId='formBasicEmail'>
