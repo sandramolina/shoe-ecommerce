@@ -30,7 +30,7 @@ const Cart = () => {
       <h4>{productsInCart.length} items in the bag</h4>
       {productsInCartNodes}
       <hr />
-      <h3>Total Purchase: £{totalCart}</h3>
+      <h3>Total Purchase: £{Math.round(totalCart * 100) / 100}</h3>
       {productsInCart.length !== 0 ? (
         <Button variant='success' onClick={handleCheckOutClick}>
           <Link to='/checkout' id='checkout-link'>
